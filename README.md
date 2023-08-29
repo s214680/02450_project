@@ -5,7 +5,7 @@ This repository is intended for the first group assignment of the course '02450 
 In here you can find the data and python code we used for 
 It contains the python scripts and data for the main project (divided in three assignments).
 
-Link to original datasheet: https://www.kaggle.com/datasets/marquis03/age-assessment-and-disease-risk-prediction
+Data acquired from UC Irvine Machine Learning Repository (http://archive.ics.uci.edu/dataset/2/adult)
 
 Project Start Date: 2023-08-29
 
