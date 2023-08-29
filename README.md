@@ -1,4 +1,4 @@
-# Using Regression to Predict Alzheimer's Disease Risk
+# Predicting Whether Income Exceeds $50K/yr Based on Census Data
 ### A group project for course 02450 - Introduction to Machine Learning and Data Mining
 
 This repository is intended for the first group assignment of the course '02450 - Introduction to Machine Learning and Data Mining' at the Technical University of Denmark (DTU). 
