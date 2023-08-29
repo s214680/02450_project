@@ -10,3 +10,8 @@ Data acquired from UC Irvine Machine Learning Repository (http://archive.ics.uci
 Project Start Date: 2023-08-29
 
 Authors: Emma Louise Blair (BSc. Electrical Engineering Student), Cheng-Liang Lu (MSc. Human-Centered Artificial Intelligence), Jennifer Fortuny I Zhan (MSc. Bioinformatics and Systems Biology)
+
+
+At least 500.
+
+We can choose to randomize and get a subset or we can got by a specific category (fx unmarried women).
