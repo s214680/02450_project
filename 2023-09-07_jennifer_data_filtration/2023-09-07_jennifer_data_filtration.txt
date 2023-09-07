@@ -43,3 +43,4 @@ Step 1: Choosing the countries:
     Australia     64.96 thousand
 
 # Next I create a copy of the original data as a backup, and go to work on creating a filtered dataset.
+# The steps I took to filter the data set are in the file: 2023-09-07_jennifer_step1_filter_countries.py.
