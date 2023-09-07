@@ -26,3 +26,18 @@ Index           adult.data      adult.names     adult.test      old.adult.names
 
 ----------------------------------------------------------------------------------------------------------------------------------
 Filtering criteria one: Countries with top 5 or top 10 gdp per capita.
+
+Step 1: Choosing the countries:
+# I viewed the International Monetary Fund's April 2023 data (https://www.imf.org/external/datamapper/NGDPDPC@WEO/OEMDC/ADVEC/WEOWORLD).
+# I set to view the gdp per capita in descending order, and decided to use the countries with the top 10 gdp per capita, listed below:
+    Luxembourg    132.37 thousand
+    Ireland       114.58 thousand
+    Norway        101.1 thousand
+    Switzerland   98.77 thousand
+    Singapore     91.1 thousand
+    Qatar         83.89 thousand
+    United States 80.03 thousand
+    Iceland       75.18 thousand
+    Denmark       68.83 thousand
+    Australia     64.96 thousand
+
