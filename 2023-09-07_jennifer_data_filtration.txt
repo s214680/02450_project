@@ -41,3 +41,4 @@ Step 1: Choosing the countries:
     Denmark       68.83 thousand
     Australia     64.96 thousand
 
+# Next I create a copy of the original data as a backup, and go to work on creating a filtered dataset.
