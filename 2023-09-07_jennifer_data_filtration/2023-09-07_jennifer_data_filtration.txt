@@ -23,7 +23,7 @@ Index           adult.data      adult.names     adult.test      old.adult.names
 
 # From the result above I decided that adults.data contained the raw data we want to investigate.
 # The raw data was in a csv format.
-# I have uploaded the raw data file in this repository.
+# I have uploaded the raw data file, adult.data in this repository.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 Filtering criteria one: Countries with top 5 or top 10 gdp per capita.
