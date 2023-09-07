@@ -4,6 +4,25 @@ Date: Thursday, 2023-09-07
 
 This file breifly explains the steps I took to reduce the raw data from UC Irvine's Census database.
 On Tuesday, 2023-09-05, following group discussion, we decided to limit the scope of our data to the following:
-    • Countries with top 5 or top 10 gdp per capita (tbd).
+    • Countries with top 5 or top 10 gdp per capita.
     • Continuous: age, edu-num, hour-per-week.
     • Categorical: workclass, occupation.
+
+On Thuesday, I downloaded the files from UC Irvine's (http://archive.ics.uci.edu/dataset/2/adult) and set to reduce the dataset.
+----------------------------------------------------------------------------------------------------------------------------------
+Initial download and verification of the data:
+# After downloading the file, I unzipped it.
+# I used the ls command to see the files present:
+$ ls
+Index           adult.data      adult.names     adult.test      old.adult.names
+
+# I decided to look into the contents of adults.data using head:
+39, State-gov, 77516, Bachelors, 13, Never-married, Adm-clerical, Not-in-family, White, Male, 2174, 0, 40, United-States, <=50K
+50, Self-emp-not-inc, 83311, Bachelors, 13, Married-civ-spouse, Exec-managerial, Husband, White, Male, 0, 0, 13, United-States, <=50K
+38, Private, 215646, HS-grad, 9, Divorced, Handlers-cleaners, Not-in-family, White, Male, 0, 0, 40, United-States, <=50K
+
+# From the result above I decided that adults.data contained the raw data we want to investigate.
+# The raw data was in a csv format.
+
+----------------------------------------------------------------------------------------------------------------------------------
+Filtering criteria one: Countries with top 5 or top 10 gdp per capita.
