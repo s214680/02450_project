@@ -1,0 +1,9 @@
+File_name: 2023-09-07_jennifer_data_filtration.txt
+Author: Jennifer Fortuny I Zhan
+Date: Thursday, 2023-09-07
+
+This file breifly explains the steps I took to reduce the raw data from UC Irvine's Census database.
+On Tuesday, 2023-09-05, following group discussion, we decided to limit the scope of our data to the following:
+    • Countries with top 5 or top 10 gdp per capita (tbd).
+    • Continuous: age, edu-num, hour-per-week.
+    • Categorical: workclass, occupation.
