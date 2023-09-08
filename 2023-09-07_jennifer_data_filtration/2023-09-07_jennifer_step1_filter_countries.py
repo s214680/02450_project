@@ -1,5 +1,5 @@
 """
-File_name: 2023-09-07_jennifer_data_filtration.txt
+File_name: 2023-09-07_jennifer_step1_filer_countries.py
 Author: Jennifer Fortuny I Zhan
 Date: Thursday, 2023-09-07
 
@@ -88,6 +88,6 @@ filtered_by_country = data[data['native-country'].isin(south_east_asia)]
 print(filtered_by_country)
 
 # I save this output as a csv file for further processing and sharing.
-filtered_by_country.to_csv('2023-09-08_jennifer_filtered_by_country.csv')
+filtered_by_country.to_csv('2023-09-08_jennifer_filtered_by_country.csv', index=False)
 # The csv file it produced contains 320 rows, and 15 columns.
 # Next, I will reduce the number of columns to 6.
