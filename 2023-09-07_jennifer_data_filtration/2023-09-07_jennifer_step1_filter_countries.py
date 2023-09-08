@@ -6,11 +6,11 @@ Date: Thursday, 2023-09-07
 This file contains the python code I used to extract the countries with the top 10 gdp per capita from the original dataset.
 
 """
-# Make sure to work in an enviornment were you have pandas installed.
+# Make sure to work in an enviornment were I have pandas installed.
 import pandas as pd
 
 # We will first load the entire data set into a variable:
-# Make sure you are in the same working directory as the data.
+# Make sure I am in the same working directory as the data.
 data = pd.read_csv('adult.data', header=None)
 
 # Given that our file has no column names, I will add them by referencing the adult.names file.
