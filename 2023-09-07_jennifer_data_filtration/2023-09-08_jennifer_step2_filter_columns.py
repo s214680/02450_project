@@ -2,6 +2,7 @@
 File_name: 2023-09-08_jennifer_step2_filter_columns.py
 Author: Jennifer Fortuny I Zhan
 Date: Thursday, 2023-09-08
+Main edits: 2023-09-15, added "income" as a column".
 
 This file contains the python code I used to filter 6 out of 15 columns fron the filtered_by_country.csv file.
 
@@ -18,7 +19,7 @@ import pandas as pd
 data = pd.read_csv('2023-09-08_jennifer_filtered_by_country.csv')
 
 # Now I specify the columns that I want to keep:
-keep_attributes = data[['age', 'education-num', 'hours-per-week', 'workclass', 'occupation']]
+keep_attributes = data[['age', 'education-num', 'hours-per-week', 'workclass', 'occupation', 'income']]
 
 # Finally, I save this filtered data as a csv file for further processing and sharing.
 keep_attributes.to_csv('2023-09-08_jennifer_filtered_complete.csv', index=False)
@@ -27,6 +28,6 @@ keep_attributes.to_csv('2023-09-08_jennifer_filtered_complete.csv', index=False)
 rows, columns = keep_attributes.shape
 datapoints = rows * columns
 print(f"We have {rows} rows and {columns} columns, giving us {datapoints} datapoints.\n")
-print("The 5 columns, i.e. attributes, are:")
+print(f"The {columns} columns, i.e. attributes, are:")
 print(", ".join(keep_attributes.columns))
 

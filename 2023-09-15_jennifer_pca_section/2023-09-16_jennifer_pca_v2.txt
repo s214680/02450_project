@@ -1,0 +1,22 @@
+File_name: 2023-09-07_2023-09-16_jennifer_pca_v2.txt
+Author: Jennifer Fortuny I Zhan
+Date: Thursday, 2023-09-07
+
+Main idea: To carry out a PCA for Visualisation and Clustering
+
+Main Steps:
+1. Combine both the continuous and one-hot encoded categorical variables
+- Load the dataset we will use into a pandas DataFrame.
+- Segregate continous and categorical variables.
+- Apply one-hot encoding to convert the categorical variables into a format suitable for PCA.
+
+2. Standarise the dataset to make sure each attribute will have a mean of 0 and a standard deviaiton of 1
+
+3. Apply PCA and reduce the data to 2 or 3 dimensions:
+- Apply the PCA algorithm to the data.
+- Choose the number of components for visualisation, mainly depends on the variance explained by the components.
+
+4. Plot the data in the reduced space:
+- Visualise the data in the reduced dimensionality space
+- By coloring points based on attributes like 'income':
+    we can identify patterns, clusters or relationships between variables.
