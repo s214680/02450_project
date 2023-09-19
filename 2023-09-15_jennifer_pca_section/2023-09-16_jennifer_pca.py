@@ -10,6 +10,10 @@ from mpl_toolkits.mplot3d import Axes3D
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
 # I load the dataset into a panda data frame:
 data= pd.read_csv('/Users/jenniferfortuny/02450_project/2023-09-15_jennifer_pca_section/2023-09-08_jennifer_filtered_complete_copy.csv')
 
