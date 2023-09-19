@@ -76,7 +76,6 @@ for column in categorical_attributes:
     plt.ylabel('Frequency')
     # I angle the x-axis labels a bit to show all the words clearly
     plt.xticks(rotation=20, ha='right', fontsize=10)
-
     plt.tight_layout()
     plt.show()
 
@@ -92,7 +91,7 @@ for column in categorical_attributes:
 #    workclass: extreme with "Private" at the highest frequency.
 #    occupation: some outliers, most seem to be at the similar frequency, no clear trend.
 
-# I will use Q-Q plots to determin if they attributes have a formal normal distribution.
+# I will use Q-Q plots to determine if they attributes have a formal normal distribution.
 # If the data are mostly on the y=x line in the Q-Q plot, then we can assume there is a normal distribution.
 # I will plot the continous variables' Q-Q plots:
 """
@@ -184,7 +183,7 @@ principal_components_full = pca.fit_transform(data_standarized)
 
 # Now, I will look into the explained variance.
 # I will plot the explained variance ratio, to see how much variance each component explains.
-# This will help me determin a good number of PCs.
+# This will help me determine a good number of PCs.
 explained_variance = pca.explained_variance_ratio_
 cumulative_variance = np.cumsum(explained_variance)
 
@@ -259,11 +258,11 @@ for i, inertia in enumerate(explained_inertia):
     plt.annotate(f"PC{i+1}: {inertia*100:.2f}%", (i, inertia), 
                  textcoords="offset points", xytext=(0, 10), ha='center')
 
-plt.xlabel('Number of Components')
-plt.ylabel('Explained Inertia')
-plt.title('Explained Inertia as Number of Components Increases')
-plt.grid(True)
-plt.show()
+    plt.xlabel('Number of Components')
+    plt.ylabel('Explained Inertia')
+    plt.title('Explained Inertia as Number of Components Increases')
+    plt.grid(True)
+    plt.show()
 
 # I create a 2D scatter plot for the categorical values.
 # First I extract coordinates for the first two components:
