@@ -140,23 +140,23 @@ def plot_3d_scatter_for_pca(pca_coordinates):
 def perform_mca(categorical_encoded):
     """Perform PCA analysis on the encoded categorical data"""
     # I begin by initialising MCA with the prince module and fit the encoded categorical data:
-    # To begin, I will not specify the number of components.
+    # To begin, I don't not specify the number of components.
     mca = prince.MCA()
     mca = mca.fit(categorical_encoded)
 
-    # Now I will transform the categorical data
+    # Now I  transform the categorical data
     mca_coordinates = mca.transform(categorical_encoded)
 
-    # Now, I will take a look at MCA's explained inertia for each component,
+    # Now, I take a look at MCA's explained inertia for each component,
     # which is similar to PCA's explained variance.
-    # I will start by getting the eigenvalues.
+    # I start by getting the eigenvalues.
     eigenvalues = mca.eigenvalues_
 
-    # Calculate the total intertia:
+    # Calculate the total inertia:
     total_inertia = sum(eigenvalues)
 
     # Now get the proportion of explained inertia:
-    # Now I will plot the explained inertia:
+    # Now I plot the explained inertia:
     explained_inertia = [eig/total_inertia for eig in eigenvalues]
     plt.figure(figsize=(10, 6))
     plt.plot(explained_inertia, marker='o', linestyle='--', color='b')
@@ -197,24 +197,26 @@ categorical_attributes = data.columns[3:]
 categorical_encoded = pd.get_dummies(data, columns=categorical_attributes, drop_first=True)
 
 # Create data visualisations to detect outliers
+"""
+1. Check for outliers. 
+To check if the attributes are normally distributes,
+I begin by reflectiong on the results of the histograms:
+continous attributes:
+     age: tail to the right, so right sqewed distribution.
+     edu-num: looks like a bimodial distribution.
+     hours-per-week: looks like an extreme plot with on highly frequent value at 35-40.
+ categorical attributes:
+    workclass: extreme with "Private" at the highest frequency.
+    occupation: some outliers, most seem to be at the similar frequency, no clear trend.
+"""
+
 plot_histogram_boxplot(data, continuous_attributes)
 plot_histogram(data, categorical_attributes)
 
 """
-2. Check for outliers.
-# To check if the attributes are normally distributes,
-# I will begin by reflectiong on the results of the histograms:
-# continous attributes:
-#     age: tail to the right, so right sqewed distribution.
-#     edu-num: looks like a bimodial distribution.
-#     hours-per-week: looks like an extreme plot with on highly frequent value at 35-40.
-# categorical attributes:
-#    workclass: extreme with "Private" at the highest frequency.
-#    occupation: some outliers, most seem to be at the similar frequency, no clear trend.
-
-# I will use Q-Q plots to determine if they attributes have a formal normal distribution.
-# If the data are mostly on the y=x line in the Q-Q plot, then we can assume there is a normal distribution.
-# I will plot the continous variables' Q-Q plots:
+I use Q-Q plots to determine if they attributes have a formal normal distribution.
+If the data are mostly on the y=x line in the Q-Q plot, then we can assume there is a normal distribution.
+I plot the continous variables' Q-Q plots:
 """
 
 # Q-Q plots for continuous attributes
@@ -250,7 +252,7 @@ The occpupation attribute shows a more uniform distribution, with some roles act
 plot_correlation_heatmap(data, continuous_attributes)
 
 """
-Carry-out the PCA analysis:
+2.Carry-out the PCA analysis:
 
 If your attributes have different scales you,
 should include the step where the data is standardizes
@@ -266,9 +268,9 @@ continuous_attributes_standarized = StandardScaler().fit_transform(data[continuo
 
 """
 Now I wil carry out the PCA analysis.
-I will start by running the PCA without initially setting a number of components.
-This will help me understand the total explained variance for each component.
-It will also be helpful in determining the number of PCs that would capture most of the dataset's variance.
+I start by running the PCA without initially setting a number of components.
+This helps me understand the total explained variance for each component.
+It is also helpful in determining the number of PCs that would capture most of the dataset's variance.
 """
 # PCA analysis, with 3D scatter plot
 pca, pca_coordinates = perform_pca(continuous_attributes_standarized)
@@ -276,9 +278,9 @@ plot_3d_scatter_for_pca(pca_coordinates)
 
 """
 Given that we are working with a large number of potential PCs
-I will carry out some dimensional reduction, 
+I carry-out some dimensional reduction, 
 and only use three PCs for the PCA analysis and visualisation.
-I will also try to retain as much information about the data as possible.
+I also try to retain as much information about the data as possible.
 21 PCs is a lot of PCs. This is most likely the result of having used one-hot encoding for our categorical data.
 
 Given this situation. I would like to apply the PCA only to the continous part,
