@@ -44,6 +44,7 @@ def plot_histogram_boxplot(data, continuous_attributes):
 
 # Create data visualisation
 def plot_histogram(data, categorical_attributes):
+    """Plot a histogram for each categorical attribute."""
     for column in categorical_attributes:
         plt.figure(figsize=(10, 6))
         sns.histplot(data[column], kde=True)
@@ -56,6 +57,7 @@ def plot_histogram(data, categorical_attributes):
 
 # Q-Q plots for continuous attributes
 def plot_qq(data, continous_attributes):
+    """Plot a Q-Q plot for a given"""
     for column in continous_attributes:
         plt.figure(figsize=(10, 6))
         sm.qqplot(data[column].dropna(), line='45', fit=True)
@@ -64,6 +66,7 @@ def plot_qq(data, continous_attributes):
 
 # Correlation heatmap
 def plot_correlation_heatmap(data, continous_attributes):
+    """Plot a heatmap for the correlations of the continous attributes"""
     corr = data[continous_attributes].corr()
     plt.figure(figsize=(10, 8))
     sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
@@ -74,6 +77,7 @@ def plot_correlation_heatmap(data, continous_attributes):
 
 # PCA analysis
 def perform_pca(data_standarized):
+    """Perform PCA analysis on the standarized continuous data"""
     pca = PCA()
     principal_components_full = pca.fit_transform(data_standarized)
     explained_variance = pca.explained_variance_ratio_
@@ -87,10 +91,31 @@ def perform_pca(data_standarized):
     plt.title('Cumulative Explained Variance as Number of Components Increases')
     plt.grid(True)
     plt.show()
-    return pca
+    return pca, principal_components_full
+
+def plot_3d_scatter_for_pca(pca_coordinates):
+    """Plot a 3D scatter plot of the first 3 principal components."""
+    # Create a 3D scatter plot for the continuous attributes.
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Isolate the coordinates of the first 3PCs
+    x = pca_coordinates[:, 0]
+    y = pca_coordinates[:, 1]
+    z = pca_coordinates[:, 2]
+
+    ax.scatter(x, y, z, c="b", marker="o")
+
+    ax.set_xlabel('PC1')
+    ax.set_ylabel('PC2')
+    ax.set_zlabel('PC3')
+    ax.set_title('3D Scatter plot of the PCs for continuous data')
+
+    plt.show()
 
 # MCA analysis
 def perform_mca(categorical_encoded):
+    """Perform PCA analysis on the encoded categorical data"""
     mca = prince.MCA()
     mca = mca.fit(categorical_encoded)
     mca_coordinates = mca.transform(categorical_encoded)
@@ -118,7 +143,7 @@ categorical_attributes = data.columns[3:]
 # One-hot encoding for categorical attributes
 categorical_encoded = pd.get_dummies(data, columns=categorical_attributes, drop_first=True)
 
-# Create data visualisations for outliers
+# Create data visualisations to detect outliers
 plot_histogram_boxplot(data, continuous_attributes)
 plot_histogram(data, categorical_attributes)
 
@@ -131,8 +156,9 @@ plot_correlation_heatmap(data, continuous_attributes)
 # Standarize continuous data
 continuous_attributes_standarized = StandardScaler().fit_transform(data[continuous_attributes].dropna())
 
-# PCA analysis
-perform_pca(continuous_attributes_standarized)
+# PCA analysis, with 3D scatter plot
+pca, pca_coordinates = perform_pca(continuous_attributes_standarized)
+plot_3d_scatter_for_pca(pca_coordinates)
 
 # MCA analysis
 perform_mca(categorical_encoded)
