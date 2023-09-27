@@ -1,5 +1,5 @@
 # Predicting Whether Income Exceeds $50K/yr Based on Census Data
-### A group project for course 02450 - Introduction to Machine Learning and Data Mining
+### Group116, Project 1 for the course - Introduction to Machine Learning and Data Mining
 
 This repository is intended for the first group assignment of the course '02450 - Introduction to Machine Learning and Data Mining' at the Technical University of Denmark (DTU). 
 In here you can find the data and python code we used for 
