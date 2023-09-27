@@ -1,4 +1,4 @@
-# Using PCA to access whether Censes data is a suitable candidate for further anlaysis using machine learning methods.
+# Using PCA to access whether Censes data is a suitable candidate for further analysis that use machine learning methods
 ### Group116, Project 1 for the course - Introduction to Machine Learning and Data Mining
 
 This repository is intended for the first group assignment of the course '02450 - Introduction to Machine Learning and Data Mining' at the Technical University of Denmark (DTU). 
