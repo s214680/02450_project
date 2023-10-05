@@ -10,6 +10,6 @@ Data acquired from UC Irvine Machine Learning Repository (http://archive.ics.uci
 Project Start Date: 2023-08-29
 
 Authors:  
-Emma Louise Blair (BSc. Electrical Engineering Student), 
-Cheng-Liang Lu (MSc. Human-Centered Artificial Intelligence), 
-Jennifer Fortuny I Zhan (MSc. Bioinformatics and Systems Biology)
+Emma Louise Blair (BSc. Electrical Engineering Student)<br>, 
+Cheng-Liang Lu (MSc. Human-Centered Artificial Intelligence)<br>, 
+Jennifer Fortuny I Zhan (MSc. Bioinformatics and Systems Biology)<br>.
